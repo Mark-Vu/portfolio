@@ -1,4 +1,3 @@
-
 <script lang="ts">
     // This can be false if you're using a fallback (i.e. SPA mode)
     import "../app.css";
@@ -10,7 +9,6 @@
     function scrollToTop() {
         document.body.scrollIntoView();
     }
-
 </script>
 
 <div
@@ -18,7 +16,7 @@
 sm:text-base min-h-screen text-white"
 >
     <div
-        class={"fixed bottom-0 w-full duration-200 flex p-10 z-[10]" +
+        class={"fixed bottom-0 right-0 duration-200 flex p-10 z-[10]" +
             (y > 0
                 ? " opacity-full pointer-events-auto"
                 : "pointer-events-none")}
