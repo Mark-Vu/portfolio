@@ -1,7 +1,6 @@
 
 <script lang="ts">
     // This can be false if you're using a fallback (i.e. SPA mode)
-    export const prerender = true;
     import "../app.css";
     import Footer from "../components/Footer.svelte";
     import Header from "../components/Header.svelte";
