@@ -6,17 +6,17 @@
 
     let benefits = [
         {
-            name: "Frontend",
+            name: "Languages",
             description:
                 "I taught myself to code using free online resources and absolutely fell in love with the creativity and problem solving that is involved in developing and engineering innovative new online experiences. Starting of with JavaScript, HTML & CSS and evolving my knowledge base to include JavaScript frameworks, backend programming, design, cloud services and much much more.",
         },
         {
-            name: "Backend",
+            name: "Framework",
             description:
                 "Carefully crafting and designing amazing user experiences allows me to express and experiment with every morsel of creativity I have. I love the challenge of learning new design concepts and enabling users with amazing online experiences.",
         },
         {
-            name: "an excellent communicator",
+            name: "Badminton",
             description:
                 "Communication is key and it's a paramount value of mine. I believe in transparency and constructive communication above all else. This helps me develop deep relationships and ensures my effectiveness and productivity in any work space with any team.",
         },
@@ -114,7 +114,7 @@
             {#each benefits as benefit, index}
                 <div class="flex gap-6 sm:gap-8">
                     <p
-                        class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold"
+                        class="poppins text-4xl sm:text-5xl md:text-6xl text-one-dark-yellow font-semibold"
                     >
                         0{index + 1}
                     </p>
