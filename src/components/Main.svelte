@@ -3,6 +3,7 @@
     import Project from "./Project.svelte";
     import sortingAlgoImg from "../lib/images/sortingAlgo.png";
     import broSliderImg from "../lib/images/brosliderImg.png";
+    import Experience from "./Experience.svelte";
 
     let benefits = [
         {
@@ -94,7 +95,7 @@
 
     <section
         id="about"
-        class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 relative"
+        class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-10 relative"
     >
         <!-- <div class="z-[-1] bg-violet-950 w-screen left-1/2 -translate-x-1/2 top-0 h-full absolute"> </div> -->
         <div
@@ -108,9 +109,9 @@
             </h3>
         </div>
         <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl">
-            My skills . . .
+            <span class="poppins text-one-dark-yellow">My</span> . . .
         </p>
-        <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
+        <!-- <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
             {#each benefits as benefit, index}
                 <div class="flex gap-6 sm:gap-8">
                     <p
@@ -126,6 +127,7 @@
                     </div>
                 </div>
             {/each}
-        </div>
+        </div> -->
+        <Experience />
     </section>
 </main>

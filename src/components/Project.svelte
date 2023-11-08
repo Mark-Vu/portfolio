@@ -48,7 +48,7 @@
                         role="list"
                         class="mt-5 space-y-5 lg:mt-8 lg:space-y-8 text-white"
                     >
-                        <li class="flex gap-x-3">
+                        <li class="flex gap-x-1">
                             <svg
                                 class="mt-[0.1rem] h-5 w-5 flex-none text-white"
                                 viewBox="0 0 20 20"
@@ -69,16 +69,16 @@
                                 {props.technology}</span
                             >
                         </li>
-                        <li class="flex gap-x-3">
+                        <li>
                             <p
                                 class="font-medium text-one-dark-yellow tracking-wider"
                             >
                                 <a
                                     href={props.github}
-                                    class="inline-flex items-center text-one-dark-yellow dark:text-one-dark-blue hover:underline"
+                                    class="inline-flex gap-x-1 justify-center items-center text-one-dark-yellow dark:text-one-dark-blue hover:underline"
                                 >
                                     <svg
-                                        class="h-5 w-5 mr-3 text-white dark:text-white"
+                                        class="h-5 w-5 text-white dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor"
