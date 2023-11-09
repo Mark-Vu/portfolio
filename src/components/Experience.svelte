@@ -80,6 +80,37 @@
             VSCode: vscodeIcon,
         },
     ];
+
+    let experiences = [
+        {
+            date: "Jun - Sep 2023",
+            job_title: "IOS Developer",
+            company: "CJSF 90.1FM Radio",
+            description: `
+        Collaborated within a four-member team to test and deploy
+        <a href="https://apps.apple.com/us/app/cjsf-radio-fm/id1599448685"
+           target="_blank"
+           class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+        >CJSF Radio</a> an in-house application allowing users to listen to
+        live radio, see upcoming programs, choose favorite programs, and receive notifications
+      `,
+            technologies: "React Native",
+        },
+        {
+            date: "Jun 2020 - Jun 2021",
+            job_title: "Y-Lead Program Coordinator",
+            company: "YMCA",
+            description: `
+            Worked on a project that helped immigrants learn about coding, gave a speech about my Python
+        <a href="https://github.com/Mark-Vu/HangMan-Pygame"
+           target="_blank"
+           class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+        >Hangman game</a> that sparked kids' interest in programming
+        
+      `,
+            technologies: "",
+        },
+    ];
 </script>
 
 <div class="z-[1]">
@@ -199,60 +230,56 @@
             </h1>
 
             <div class="relative mt-5 text-left flex flex-col ali">
-                <div class="flex items-center relative">
-                    <div
-                        class="border-r-2 border-one-dark-white absolute h-full left-1 md:left-20 top-2 z-10"
-                    >
-                        <i
-                            class="fas fa-circle text-one-dark-yellow -top-1 -ml-2 absolute"
-                        />
-                    </div>
+                {#each experiences as experience}
+                    <div class="flex items-center relative">
+                        <div
+                            class="border-r-2 border-one-dark-white absolute h-full left-1 md:left-20 top-2 z-10"
+                        >
+                            <i
+                                class="fas fa-circle text-one-dark-yellow -top-1 -ml-2 absolute"
+                            />
+                        </div>
 
-                    <div class="ml-12 md:ml-24 mb-3">
-                        <time
-                            class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-one-dark-yellow"
-                            >Jun - Sep 2023</time
-                        >
-                        <h3
-                            class="text-lg font-semibold text-gray-900 dark:text-white"
-                        >
-                            IOS Developer
-                        </h3>
-                        <div class="italic mb-3">CJSF Radio</div>
-                        <p class="text-gray-500 dark:text-gray-300 mb-3">
-                            Collaborated within a four-member team to test and
-                            deploy <a
-                                href="https://apps.apple.com/us/app/cjsf-radio-fm/id1599448685"
-                                target="_blank"
-                                class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
-                                >CJSF Radio</a
-                            > an in-house application allowing users to listen to
-                            live radio, see upcoming programs, choose favorite programs,
-                            and receive notifications
-                        </p>
-                        <li class="flex gap-x-1">
-                            <svg
-                                class="mt-[0.1rem] h-5 w-5 flex-none text-white"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
+                        <div class="ml-12 md:ml-24 mb-3">
+                            <time
+                                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-one-dark-yellow"
+                                >{experience.date}</time
                             >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
-                                    clip-rule="evenodd"
-                                />
-                            </svg>
-                            <span class="poppins font-medium"
-                                ><strong
-                                    class="font-medium text-one-dark-yellow tracking-wider"
-                                    >Technologies:</strong
-                                >
-                                React Native</span
+                            <h3
+                                class="text-lg font-semibold text-gray-900 dark:text-white"
                             >
-                        </li>
+                                {experience.job_title}
+                            </h3>
+                            <div class="italic mb-3">{experience.company}</div>
+                            <p class="text-gray-500 dark:text-gray-300 mb-3">
+                                {@html experience.description}
+                            </p>
+                            {#if experience.technologies}
+                                <li class="flex gap-x-1 mb-5">
+                                    <svg
+                                        class="mt-[0.1rem] h-5 w-5 flex-none text-white"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                    <span class="poppins font-medium">
+                                        <strong
+                                            class="font-medium text-one-dark-yellow tracking-wider"
+                                            >Technologies:</strong
+                                        >
+                                        {experience.technologies}
+                                    </span>
+                                </li>
+                            {/if}
+                        </div>
                     </div>
-                </div>
+                {/each}
             </div>
         </div>
     </div>

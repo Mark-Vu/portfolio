@@ -1,9 +1,12 @@
 <script lang="ts">
     import profileImg from "../lib/images/profileImg.png";
     import Project from "./Project.svelte";
-    import sortingAlgoImg from "../lib/images/sortingAlgo.png";
-    import broSliderImg from "../lib/images/brosliderImg.png";
+    import sortingAlgoImg from "../lib/images/projects/sortingAlgo.png";
+    import broSliderImg from "../lib/images/projects/brosliderImg.png";
+    import ficCheckImg from "../lib/images/projects/ficcheck.png";
     import Experience from "./Experience.svelte";
+    import jobHubImg from "../lib/images/projects/jobhub.png";
+    import studyHubImg from "../lib/images/projects/studyhub.png";
 
     let benefits = [
         {
@@ -25,13 +28,38 @@
 
     let project_list: ProjectItem[] = [
         {
-            description: "Pygame Application",
-            title: "Sorting Algorithm Visualizer",
+            description: "Full Stack Web app",
+            title: "Study Ecosystem",
             content:
-                "Wanna learn sorting algorithms by visualizing? Click the link below",
-            technology: "Python, Pygame",
-            image: sortingAlgoImg,
-            github: "https://github.com/Mark-Vu/Algorithm-Visualizer",
+                "Focused on backend development with JWT authentication, XSS prevention, and CSRF double-submit token. Considering different web security config such as COR, HttpOnly Cookie JWT, SameSite Lax",
+            technology:
+                "React, Flask, PostgreSQL, Pytest, SQLAchemy, Vite, HTML, CSS, Vercel",
+            image: studyHubImg,
+            github: "https://github.com/Mark-Vu/StudyHub",
+            liveSite: "",
+            imagePosition: "right",
+        },
+        {
+            description: "12-hour Hackathon Project",
+            title: "Job Hub",
+            content:
+                "Join Jobhub - an all-in-one job board that scrapes data from different sites including LinkedIn, Indeed,... . The purpose is saving you time from looking up different keywords such as: software dev, software engineer, software developer, etc...?",
+            technology:
+                "React, Flask, PostgreSQL, SQLAlchemy, Vite, Docker, HTML, CSS",
+            image: jobHubImg,
+            github: "https://github.com/Mark-Vu/JobHub",
+            liveSite: "",
+            imagePosition: "left",
+        },
+        {
+            description: "Full Stack Web app",
+            title: "FIC Check",
+            content:
+                "An Attendance Management System build for Fraser International College. It lets students join, take and view attendance sessions. let teachers create, customize and view attendacnce session data",
+            technology:
+                "Java Spring Boot, PostgreSQL, HTML, CSS, JavaScript, Docker",
+            image: ficCheckImg,
+            github: "https://github.com/Thachsaudoi/FIC-Check",
             liveSite: "",
             imagePosition: "right",
         },
@@ -45,6 +73,17 @@
             github: "https://github.com/Mark-Vu/PuzzleSlider",
             liveSite: "",
             imagePosition: "left",
+        },
+        {
+            description: "Pygame Application",
+            title: "Sorting Algorithm Visualizer",
+            content:
+                "Wanna learn sorting algorithms by visualizing? Click the link below",
+            technology: "Python, Pygame",
+            image: sortingAlgoImg,
+            github: "https://github.com/Mark-Vu/Algorithm-Visualizer",
+            liveSite: "",
+            imagePosition: "right",
         },
     ];
 </script>
