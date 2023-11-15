@@ -9,4 +9,5 @@ interface ProjectItem {
     technology: string,
     liveSite: string,
     imagePosition: string,
+    status: string
 }

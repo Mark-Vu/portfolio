@@ -91,8 +91,7 @@
         <a href="https://apps.apple.com/us/app/cjsf-radio-fm/id1599448685"
            target="_blank"
            class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
-        >CJSF Radio</a> an in-house application allowing users to listen to
-        live radio, see upcoming programs, choose favorite programs, and receive notifications
+        >CJSF Radio</a>. Developed unit tests, integration tests and functional tests resulted in less bugs in production. 
       `,
             technologies: "React Native",
         },

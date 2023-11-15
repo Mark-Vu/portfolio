@@ -48,6 +48,17 @@
                         role="list"
                         class="mt-5 space-y-5 lg:mt-8 lg:space-y-8 text-white"
                     >
+                        {#if props.status}
+                            <li class="flex gap-x-1">
+                                <span class="poppin"
+                                    ><strong
+                                        class="font-medium text-one-dark-yellow tracking-wider"
+                                        >Status:</strong
+                                    >
+                                    {@html props.status}</span
+                                >
+                            </li>
+                        {/if}
                         <li class="flex gap-x-1">
                             <svg
                                 class="mt-[0.1rem] h-5 w-5 flex-none text-white"
