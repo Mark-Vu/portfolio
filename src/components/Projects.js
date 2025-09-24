@@ -55,7 +55,7 @@ export default function Projects() {
             title: "FIC-Check",
             subtitle: "Attendance Management System",
             description:
-                "Developed an attendance management app for Fraser International College that automates the age-old ritual of saying 'here' when your name is called. Features real-time WebSocket attendance taking, because apparently raising your hand is so last century. Built with Java Spring Boot and Clean Architecture, proving I can write clean code even when my dorm room looks like a tornado hit it.",
+                "Developed an attendance management app for Fraser International College. Features real-time WebSocket attendance taking, because apparently raising your hand takes too much effort. Built with Java Spring Boot and Clean Architecture",
             image: "/projects/fic-check.png",
             technologies: [
                 "Java Spring Boot",
