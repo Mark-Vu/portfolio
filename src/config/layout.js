@@ -3,7 +3,7 @@
 
 export const FONT_SIZES = {
     // Hero section
-    heroName: "text-[16vw] lg:text-[16rem]", // MARK VU giant text
+    heroName: "text-[12vw] sm:text-[14vw] md:text-[16vw] lg:text-[16rem]", // MARK VU giant text
     heroSubtitle: "text-lg lg:text-2xl", // SFU CS Student | Software Engineer
     heroBio: "text-2xl lg:text-3xl", // Bio paragraph
 

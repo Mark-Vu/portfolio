@@ -9,6 +9,7 @@ import {
 } from "../config/layout";
 import Badge from "./Badge";
 import { motion } from "framer-motion";
+import { getAssetPath } from "../utils/paths";
 
 export default function Projects() {
     const projects = [
@@ -215,7 +216,9 @@ export default function Projects() {
                                     "/projects/whatyasay-screenshot.png" ? (
                                         <div className="relative w-full h-full flex flex-col items-center justify-center">
                                             <Image
-                                                src="/bitmoji-disappointed.png"
+                                                src={getAssetPath(
+                                                    "/bitmoji-disappointed.png"
+                                                )}
                                                 alt="Disappointed bitmoji"
                                                 width={150}
                                                 height={150}
@@ -230,7 +233,7 @@ export default function Projects() {
                                         </div>
                                     ) : (
                                         <Image
-                                            src={project.image}
+                                            src={getAssetPath(project.image)}
                                             alt={`${project.title} screenshot`}
                                             fill
                                             className="object-cover"

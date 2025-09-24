@@ -11,6 +11,7 @@ import Image from "next/image";
 import Badge from "./Badge";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { getAssetPath } from "../utils/paths";
 
 export default function Work() {
     const [expandedItems, setExpandedItems] = useState({});
@@ -128,7 +129,7 @@ export default function Work() {
                                     <div className="flex items-center gap-3">
                                         <div className="flex size-20 shrink-0 items-center justify-center rounded-md border border-gray-300 overflow-hidden">
                                             <Image
-                                                src={item.logo}
+                                                src={getAssetPath(item.logo)}
                                                 alt={`${item.company} logo`}
                                                 width={100}
                                                 height={100}

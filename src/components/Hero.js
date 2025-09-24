@@ -9,6 +9,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { getAssetPath } from "../utils/paths";
 
 export default function Hero() {
     const [currentRole, setCurrentRole] = useState(0);
@@ -32,22 +33,25 @@ export default function Hero() {
                         MARK
                     </motion.h1>
                     <motion.div
-                        className="flex flex-col items-center justify-end pb-9"
+                        className="flex flex-col items-end justify-end pb-9"
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
                         <motion.div
-                            className="w-60"
+                            className="w-18 sm:w-40 md:w-48 lg:w-56 xl:w-60"
                             whileHover={{ scale: 1.1, rotate: 5 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
                             <Image
-                                src="/bitmoji-smile-thumbs-up.png"
+                                src={getAssetPath(
+                                    "/bitmoji-smile-thumbs-up.png"
+                                )}
                                 alt="Mark's Bitmoji"
-                                width={256}
-                                height={256}
                                 priority
+                                width={0}
+                                height={0}
+                                className="w-full h-auto"
                             />
                         </motion.div>
                     </motion.div>

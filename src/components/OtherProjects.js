@@ -8,6 +8,7 @@ import {
     FONT_SIZES,
 } from "../config/layout";
 import Badge from "./Badge";
+import { getAssetPath } from "../utils/paths";
 
 export default function OtherProjects() {
     const otherProjectsData = [
@@ -121,7 +122,7 @@ export default function OtherProjects() {
                                 className="overflow-hidden rounded-lg mb-4"
                             >
                                 <Image
-                                    src={project.image}
+                                    src={getAssetPath(project.image)}
                                     alt={project.title}
                                     height={240}
                                     width={240}

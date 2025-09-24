@@ -21,7 +21,7 @@ export default function Navigation() {
         <motion.header
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="sticky top-5 z-50 my-5 flex items-center justify-between sm:top-10 sm:my-10 sm:mx-auto sm:max-w-2xl sm:rounded-full sm:border sm:border-gray-200 sm:bg-white/80 sm:px-6 sm:py-4 sm:backdrop-blur-sm"
+            className="sticky top-5 z-50 my-5 flex items-center justify-between sm:top-10 sm:my-10 sm:mx-auto sm:max-w-2xl sm:rounded-full sm:border sm:border-gray-200 sm:bg-white/80 px-6 sm:py-4 sm:backdrop-blur-sm"
         >
             {/* Mobile menu button */}
             <button
