@@ -223,8 +223,8 @@ export default function Projects() {
                                             />
                                             <div className="absolute top-6 left-4 right-4 text-center">
                                                 <p className="text-gray-600 text-xl font-medium px-3">
-                                                    I didn't think of capturing
-                                                    screenshots for my portfolio
+                                                    Screenshots coming soon (I
+                                                    promise it worked)
                                                 </p>
                                             </div>
                                         </div>
