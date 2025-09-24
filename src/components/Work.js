@@ -6,12 +6,22 @@ import {
     LAYOUT_CONFIG,
     FONT_SIZES,
 } from "../config/layout";
-import { Calendar } from "lucide-react";
+import { Calendar, ChevronDown, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Badge from "./Badge";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Work() {
+    const [expandedItems, setExpandedItems] = useState({});
+
+    const toggleExpanded = (index) => {
+        setExpandedItems((prev) => ({
+            ...prev,
+            [index]: !prev[index],
+        }));
+    };
+
     const workExperience = [
         {
             title: "Software Engineer Co-op (QA Automation)",
@@ -125,11 +135,30 @@ export default function Work() {
                                                 className="object-cover"
                                             />
                                         </div>
-                                        <span
-                                            className={`${FONT_SIZES.contentTitle} font-semibold`}
-                                        >
-                                            {item.company}
-                                        </span>
+                                        <div className="flex items-center gap-2 flex-1">
+                                            <span
+                                                className={`${FONT_SIZES.contentTitle} font-semibold`}
+                                            >
+                                                {item.company}
+                                            </span>
+                                            <button
+                                                onClick={() =>
+                                                    toggleExpanded(index)
+                                                }
+                                                className="text-gray-500 hover:text-gray-700 transition-colors p-1 rounded-md hover:bg-gray-100"
+                                                aria-label={
+                                                    expandedItems[index]
+                                                        ? "Hide details"
+                                                        : "Show details"
+                                                }
+                                            >
+                                                {expandedItems[index] ? (
+                                                    <ChevronDown className="size-8 cursor-pointer" />
+                                                ) : (
+                                                    <ChevronRight className="size-8 cursor-pointer" />
+                                                )}
+                                            </button>
+                                        </div>
                                     </div>
 
                                     {/* Job title and period */}
@@ -146,28 +175,57 @@ export default function Work() {
                                     </div>
 
                                     {/* Description as bullet points */}
-                                    <div className="space-y-2">
-                                        {item.description.map(
-                                            (point, pointIndex) => (
-                                                <p
-                                                    key={pointIndex}
-                                                    className={`${FONT_SIZES.bodyMedium} text-gray-600 flex items-start`}
-                                                >
-                                                    <span className="text-gray-400 mr-2 mt-1 text-sm">
-                                                        •
-                                                    </span>
-                                                    {point}
-                                                </p>
-                                            )
-                                        )}
-                                    </div>
+                                    {expandedItems[index] && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{
+                                                opacity: 1,
+                                                height: "auto",
+                                            }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{
+                                                duration: 0.3,
+                                                ease: "easeInOut",
+                                            }}
+                                            className="space-y-2 overflow-hidden"
+                                        >
+                                            {item.description.map(
+                                                (point, pointIndex) => (
+                                                    <p
+                                                        key={pointIndex}
+                                                        className={`${FONT_SIZES.bodyMedium} text-gray-600 flex items-start`}
+                                                    >
+                                                        <span className="text-gray-400 mr-2 mt-1 text-sm">
+                                                            •
+                                                        </span>
+                                                        {point}
+                                                    </p>
+                                                )
+                                            )}
+                                        </motion.div>
+                                    )}
 
                                     {/* Technologies */}
-                                    <div className="flex flex-wrap gap-2">
-                                        {item.tags.map((tech) => (
-                                            <Badge key={tech} text={tech} />
-                                        ))}
-                                    </div>
+                                    {expandedItems[index] && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{
+                                                opacity: 1,
+                                                height: "auto",
+                                            }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{
+                                                duration: 0.3,
+                                                ease: "easeInOut",
+                                                delay: 0.1,
+                                            }}
+                                            className="flex flex-wrap gap-2 overflow-hidden"
+                                        >
+                                            {item.tags.map((tech) => (
+                                                <Badge key={tech} text={tech} />
+                                            ))}
+                                        </motion.div>
+                                    )}
                                 </div>
                             </div>
                         ))}
