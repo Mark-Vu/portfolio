@@ -47,8 +47,11 @@ export default function About() {
                         <p
                             className={`${FONT_SIZES.contentTitle} font-bold text-black`}
                         >
-                            I&apos;m a CS student at SFU who somehow convinced
-                            others to let me write code for money.
+                            I wrote my first game (Hangman) back in high school,
+                            got way too excited when it actually worked, and
+                            decided right then I’d study computer science. Now I
+                            build projects that are (hopefully) a bit more
+                            complicated and just as fun.
                         </p>
                     </motion.div>
                 </motion.div>
