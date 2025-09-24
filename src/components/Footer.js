@@ -20,13 +20,7 @@ export default function Footer() {
                         Overflow, and unhealthy amounts of coffee
                     </p>
                     <div className={`${FONT_SIZES.bodySmall} text-gray-500`}>
-                        &copy; 2024 Mark Vu. No bugs were harmed in the making
-                        of this portfolio.*
-                        <br />
-                        <span className={FONT_SIZES.bodyTiny}>
-                            *Some bugs may have been gently relocated to
-                            production
-                        </span>
+                        &copy; 2025 Mark Vu
                     </div>
                 </div>
             </div>

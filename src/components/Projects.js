@@ -72,7 +72,7 @@ export default function Projects() {
             title: "JobHub",
             subtitle: "Job Search Platform",
             description:
-                "Built a job search platform with Python microservices on AWS Lambda because apparently finding a job wasn't hard enough already. Reduced job post delays from hours to under 10 minutes, though it still can't reduce the time it takes to get a response from recruiters (that remains at infinity).",
+                "Built a job search platform with Python microservices on AWS Lambda because apparently finding a job wasn't hard enough already.",
             image: "/projects/jobhub.png",
             technologies: [
                 "Python",
