@@ -40,7 +40,8 @@ export default function Projects() {
             subtitle: "NwHacks 2024",
             description:
                 "Developed a real-time transcription web app at NwHacks 2024 that turns your rambling thoughts into organized notes using GPT-4. Perfect for lectures where professors speak faster than I can type, which is unfortunately most of them",
-            image: "/projects/whatyasay-screenshot.png",
+            image: null,
+            whyNoImageText: "Screenshots coming soon (I promise it worked)",
             technologies: [
                 "Python",
                 "FastAPI",
@@ -211,25 +212,29 @@ export default function Projects() {
 
                             {/* Project Image on the right */}
                             <div className="flex-1">
-                                <div className="relative rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3] shadow-lg">
-                                    {project.image ===
-                                    "/projects/whatyasay-screenshot.png" ? (
+                                <div
+                                    className={`relative rounded-2xl overflow-hidden aspect-video lg:aspect-[4/3] ${
+                                        project.image ? "shadow-lg" : ""
+                                    }`}
+                                >
+                                    {!project.image ? (
                                         <div className="relative w-full h-full flex flex-col items-center justify-center">
                                             <Image
                                                 src={getAssetPath(
-                                                    "/bitmoji-disappointed.png"
+                                                    "/bitmoji-hehe.png"
                                                 )}
                                                 alt="Disappointed bitmoji"
                                                 width={150}
                                                 height={150}
                                                 className="object-contain mb-4"
                                             />
-                                            <div className="absolute top-6 left-4 right-4 text-center">
-                                                <p className="text-gray-600 text-xl font-medium px-3">
-                                                    Screenshots coming soon (I
-                                                    promise it worked)
-                                                </p>
-                                            </div>
+                                            {project.whyNoImageText && (
+                                                <div className="absolute top-6 left-4 right-4 text-center">
+                                                    <p className="text-black text-xl font-medium px-3">
+                                                        {project.whyNoImageText}
+                                                    </p>
+                                                </div>
+                                            )}
                                         </div>
                                     ) : (
                                         <Image

@@ -44,9 +44,7 @@ export default function About() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        <p
-                            className={`${FONT_SIZES.contentTitle} font-bold text-black`}
-                        >
+                        <p className={`${FONT_SIZES.contentTitle} text-black`}>
                             I wrote my first game (Hangman) back in high school,
                             got way too excited when it actually worked, and
                             decided right then I’d study computer science. Now I

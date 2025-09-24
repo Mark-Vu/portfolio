@@ -38,34 +38,38 @@ export const LAYOUT_CONFIG = {
             maxWidth: "max-w-screen-2xl mx-auto w-full",
         },
         about: {
-            padding: "py-24 px-6 lg:px-12",
+            padding:
+                "py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 lg:px-12",
             maxWidth: "max-w-screen-2xl mx-auto",
         },
         work: {
-            padding: "py-24 px-6 lg:px-12",
+            padding:
+                "py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 lg:px-12",
             maxWidth: "max-w-screen-2xl mx-auto",
         },
         projects: {
-            padding: "py-24 px-6 lg:px-12",
+            padding:
+                "py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 lg:px-12",
             maxWidth: "max-w-screen-2xl mx-auto",
         },
         contact: {
-            padding: "py-24 px-6 lg:px-12",
+            padding:
+                "py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 lg:px-12",
             maxWidth: "max-w-screen-2xl mx-auto",
             background: "bg-white",
             textColor: "text-black",
         },
         footer: {
-            padding: "py-16 px-6 lg:px-12",
+            padding: "py-6 sm:py-8 md:py-10 lg:py-12 px-4 sm:px-6 lg:px-12",
             maxWidth: "max-w-screen-2xl mx-auto",
         },
     },
 
     // Common gaps and spacing
     spacing: {
-        sectionGap: "gap-16 lg:gap-24",
-        contentGap: "gap-8 lg:gap-12",
-        smallGap: "gap-4 lg:gap-6",
+        sectionGap: "gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24",
+        contentGap: "gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12",
+        smallGap: "gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6",
     },
 };
 
