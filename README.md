@@ -1,37 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mark Vu - Portfolio
 
-## Getting Started
+A modern, responsive portfolio website showcasing my projects, work experience, and skills as a Computer Science student and Software Engineer.
 
-First, run the development server:
+## 🌐 Live Demo
+
+**[View Portfolio →](https://mark-vu.github.io/portfolio/)**
+
+## ✨ Features
+
+-   **Responsive Design**: Optimized for all devices and screen sizes
+-   **Interactive Animations**: Smooth animations powered by Framer Motion
+-   **Modern UI**: Clean, professional design with Tailwind CSS
+-   **Work Experience Toggle**: Expandable sections for detailed work history
+-   **Project Showcase**: Featured projects with technologies and live demos
+-   **Contact Integration**: Direct links to GitHub, LinkedIn, and email
+
+## 🛠️ Built With
+
+-   **Next.js 15** - React framework with App Router
+-   **React 19** - JavaScript library for building user interfaces
+-   **Tailwind CSS 4** - Utility-first CSS framework
+-   **Framer Motion** - Animation library for React
+-   **Lucide React** - Beautiful, customizable icons
+-   **GitHub Pages** - Static site hosting
+
+## 🚀 Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/Mark-Vu/portfolio.git
+
+# Navigate to project directory
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio locally.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio/
+├── src/
+│   ├── app/              # Next.js app router pages
+│   ├── components/       # React components
+│   └── config/           # Configuration files
+├── public/               # Static assets
+└── .github/workflows/    # GitHub Actions for deployment
+```
 
-## Learn More
+## 🎨 Key Components
 
-To learn more about Next.js, take a look at the following resources:
+-   **Hero Section**: Introduction with animated name and bio
+-   **About**: Personal background and interests
+-   **Work Experience**: Professional experience with expandable details
+-   **Projects**: Featured projects with descriptions and tech stacks
+-   **Contact**: Social media links and contact information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This portfolio is automatically deployed to GitHub Pages using GitHub Actions. Any push to the `main` branch triggers a new deployment.
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is open source and available under the [MIT License](LICENSE).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Mark-s-portfolio
+---
+
+**Mark Vu** - Computer Science Student at SFU | Software Engineer Co-op at Trulioo
