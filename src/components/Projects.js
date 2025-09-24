@@ -218,23 +218,27 @@ export default function Projects() {
                                     }`}
                                 >
                                     {!project.image ? (
-                                        <div className="relative w-full h-full flex flex-col items-center justify-center">
-                                            <Image
-                                                src={getAssetPath(
-                                                    "/bitmoji-hehe.png"
+                                        <div className="w-full h-full flex items-center justify-center">
+                                            <div className="relative">
+                                                <Image
+                                                    src={getAssetPath(
+                                                        "/bitmoji-hehe.png"
+                                                    )}
+                                                    alt="Disappointed bitmoji"
+                                                    width={150}
+                                                    height={150}
+                                                    className="object-contain"
+                                                />
+                                                {project.whyNoImageText && (
+                                                    <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 text-center w-70">
+                                                        <p className="text-black text-xl font-medium px-3">
+                                                            {
+                                                                project.whyNoImageText
+                                                            }
+                                                        </p>
+                                                    </div>
                                                 )}
-                                                alt="Disappointed bitmoji"
-                                                width={150}
-                                                height={150}
-                                                className="object-contain mb-4"
-                                            />
-                                            {project.whyNoImageText && (
-                                                <div className="absolute top-6 left-4 right-4 text-center">
-                                                    <p className="text-black text-xl font-medium px-3">
-                                                        {project.whyNoImageText}
-                                                    </p>
-                                                </div>
-                                            )}
+                                            </div>
                                         </div>
                                     ) : (
                                         <Image
