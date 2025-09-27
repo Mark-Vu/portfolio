@@ -70,6 +70,28 @@ export default function Work() {
             ],
             logo: "/fpt_logo.png",
         },
+        {
+            title: "Mobile App Developer (React Native)",
+            company: "CJSF 90.1 FM",
+            period: "May 2023 - Sep 2023",
+            description: [
+                "Implemented and deployed a fully functional mobile app using React Native to App Store & Play Store",
+                "Added live streaming, on-demand playback, scheduling, and push notification features",
+                "Solved 100% of bug reports using Jest to perform manual and automated tests to ensure new features compatibility",
+                "Implemented new updates, such as database access to archived radio shows, and maintained app stability",
+            ],
+            tags: [
+                "React Native",
+                "JavaScript",
+                "Jest",
+                "Mobile Development",
+                "App Store",
+                "Play Store",
+                "Push Notifications",
+                "Live Streaming",
+            ],
+            logo: "/cjsf_logo.png",
+        },
     ];
 
     return (
