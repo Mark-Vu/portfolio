@@ -90,7 +90,7 @@ export default function Work() {
                 "Push Notifications",
                 "Live Streaming",
             ],
-            logo: "/cjsf_logo.png",
+            logo: "/cjsf_logo.jpg",
         },
     ];
 
