@@ -14,6 +14,23 @@ import { getAssetPath } from "../utils/paths";
 export default function Projects() {
     const projects = [
         {
+            title: "InterVu",
+            subtitle: "StormHacks 2025 Winner (Among 220 Projects)",
+            description:
+                "Led backend development with Go and MongoDB, integrating Gemini API to generate tailored interview questions. Enabled real-time conversation with an AI interviewer using ElevenLabs API, OpenAI API, and Next.js frontend. Apparently won among 220 projects, which is either impressive or everyone else really struggled with their APIs.",
+            image: "/projects/intervu.webp",
+            technologies: [
+                "Go",
+                "MongoDB",
+                "Gemini API",
+                "ElevenLabs API",
+                "OpenAI API",
+                "Next.js",
+            ],
+            githubLink: "https://devpost.com/software/intervu-852wre",
+            websiteLink: "https://www.intervuai.tech/",
+        },
+        {
             title: "Fino",
             subtitle: "Financial Tools Platform",
             description:
@@ -146,6 +163,11 @@ export default function Projects() {
                                         >
                                             {project.title}
                                         </h3>
+                                        <div className="mb-4">
+                                            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 border border-blue-200">
+                                                {project.subtitle}
+                                            </span>
+                                        </div>
                                         <p
                                             className={`${FONT_SIZES.bodyMedium} text-gray-700 mb-6 leading-relaxed`}
                                         >
