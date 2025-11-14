@@ -25,7 +25,25 @@ export default function Work() {
 
     const workExperience = [
         {
-            title: "Software Engineer Co-op (QA Automation)",
+            title: "Developer Intern - DevOps",
+            company: "1Password",
+            period: "Jan 2026 - Apr 2026",
+            description: [
+                "Will be working on improving CI/CD performance, automation reliability, and developer tooling across products",
+                "Remote position based in Toronto - because the best security happens when you're comfortable",
+            ],
+            tags: [
+                "DevOps",
+                "CI/CD",
+                "Automation",
+                "Developer Tooling",
+                "Security",
+                "Remote Work",
+            ],
+            logo: "/1password_logo.png",
+        },
+        {
+            title: "Software QA Engineer Intern",
             company: "Trulioo",
             period: "Jan 2025 - Aug 2025",
             description: [
@@ -48,25 +66,24 @@ export default function Work() {
             logo: "/trulioo_logo.jpeg",
         },
         {
-            title: "Software Engineer Intern (Full-Stack Developer)",
+            title: "Cloud Engineer Intern",
             company: "FPT Software",
             period: "May 2024 - Sep 2024",
             description: [
-                "Led a team of 4 interns to extend and launch an AI presentation generator, delivering production-ready slides for multiple business partners monthly",
-                "Designed and implemented a Python slide context generation service from scratch, building the full flow from API Gateway through Message Queue to GPT-4 powered Azure Function",
-                "Enhanced an open-source database drawing tool using ReactJS and IndexedDB, adopted by 4 teams (50+ engineers) to streamline database design workflows",
-                "Developed RESTful endpoints in Java Spring Boot and built a frontend dashboard for food ordering tools with 1,000+ restaurants",
+                "Designed and developed multiple internal tools, improved efficiency and security for engineering and business teams",
+                "Optimized AI slide generation time by 67% (15→5 min) for business team by migrating monolith architecture to microservices using Azure Functions, Service Bus and Cosmos DB",
+                "Enabled 200+ engineers to work without network dependency by developing offline storage and export features for an internal database diagramming tool using React and IndexedDB",
+                "Remote position, International - because cloud engineering works best when you're actually in the clouds",
             ],
             tags: [
-                "React",
-                "TypeScript",
-                "Python",
-                "Java",
-                "Spring Boot",
                 "Azure Functions",
-                "Message Queue",
+                "Service Bus",
+                "Cosmos DB",
+                "React",
                 "IndexedDB",
-                "RESTful APIs",
+                "Microservices",
+                "Cloud Engineering",
+                "Performance Optimization",
             ],
             logo: "/fpt_logo.png",
         },

@@ -14,6 +14,21 @@ import { getAssetPath } from "../utils/paths";
 export default function Projects() {
     const projects = [
         {
+            title: "Handora",
+            subtitle: "natHacks 2025 - Best Social Impact",
+            description:
+                "Received Best Social Impact award for building a rehab glove that turns finger motion into therapeutic games for ALS patients. Implemented algorithms to detect finger states and trigger accurate game actions with <500ms latency via Bluetooth. Because apparently making therapy fun wasn't already challenging enough without adding hardware.",
+            image: "/projects/handora.png",
+            technologies: [
+                "Next.js",
+                "Pixi.js",
+                "Web Bluetooth API",
+                "Hardware Integration",
+            ],
+            githubLink: "https://github.com/Mark-Vu/nathacks-2025",
+            websiteLink: "https://devpost.com/software/handora",
+        },
+        {
             title: "InterVu",
             subtitle: "StormHacks 2025 Winner (Among 220 Projects)",
             description:
