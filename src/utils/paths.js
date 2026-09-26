@@ -4,7 +4,6 @@
  * @returns {string} - The corrected path
  */
 export function getAssetPath(path) {
-    // Always use basePath for consistency between dev and prod
-    const basePath = "/portfolio";
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
     return path.startsWith("/") ? `${basePath}${path}` : `${basePath}/${path}`;
 }

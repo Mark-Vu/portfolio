@@ -7,9 +7,45 @@ import OtherProjects from "../components/OtherProjects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
+const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Mark Vu",
+    url: "https://mark-vu.github.io/portfolio/",
+    email: "mailto:mdv2@sfu.ca",
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: "Vancouver",
+        addressRegion: "BC",
+        addressCountry: "CA",
+    },
+    affiliation: {
+        "@type": "CollegeOrUniversity",
+        name: "Simon Fraser University",
+    },
+    sameAs: [
+        "https://github.com/Mark-Vu",
+        "https://www.linkedin.com/in/markvu03",
+    ],
+    jobTitle: "Software Engineer",
+    knowsAbout: [
+        "Go",
+        "TypeScript",
+        "Java",
+        "AWS",
+        "Kubernetes",
+        "Terraform",
+        "CI/CD",
+    ],
+};
+
 export default function Home() {
     return (
-        <main className="bg-white min-h-screen">
+        <main className="w-full max-w-full overflow-x-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+            />
             <Navigation />
             <Hero />
             <About />

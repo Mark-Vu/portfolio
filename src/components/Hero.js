@@ -1,173 +1,49 @@
 "use client";
 
-import {
-    getSectionClasses,
-    getContainerClasses,
-    FONT_SIZES,
-} from "../config/layout";
-import { Github, Linkedin, Mail } from "lucide-react";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
+import { ArrowDownRight, ArrowUpRight, Github, Linkedin } from "lucide-react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { getAssetPath } from "../utils/paths";
 
+gsap.registerPlugin(useGSAP);
+
 export default function Hero() {
-    const [currentRole, setCurrentRole] = useState(0);
+    const section = useRef(null);
+    useGSAP(() => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        gsap.from("[data-intro]", { y: 28, opacity: 0, stagger: 0.12, duration: 0.9, ease: "power3.out" });
+        gsap.from("[data-portrait]", { rotate: -7, y: 35, duration: 1.2, ease: "power3.out" });
+    }, { scope: section });
 
     return (
-        <section className={getSectionClasses("hero")}>
-            <div className={getContainerClasses("hero")}>
-                {/* First flex: MARK | bitmoji | VU */}
-                <motion.div
-                    className="flex items-end justify-between"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <motion.h1
-                        className={`text-black font-black leading-none ${FONT_SIZES.heroName}`}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        MARK
-                    </motion.h1>
-                    <motion.div
-                        className="flex flex-col items-end justify-end pb-9"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
-                    >
-                        <motion.div
-                            className="w-18 sm:w-40 md:w-48 lg:w-56 xl:w-60"
-                            whileHover={{ scale: 1.1, rotate: 5 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                        >
-                            <Image
-                                src={getAssetPath(
-                                    "/bitmoji-smile-thumbs-up.png"
-                                )}
-                                alt="Mark's Bitmoji"
-                                priority
-                                width={0}
-                                height={0}
-                                className="w-full h-auto"
-                            />
-                        </motion.div>
-                    </motion.div>
-                    <motion.h1
-                        className={`text-black font-black leading-none ${FONT_SIZES.heroName}`}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        VU
-                    </motion.h1>
-                </motion.div>
-
-                {/* Second flex: SFU CS Student | Software Engineer */}
-                <motion.div
-                    className={`flex justify-between ${FONT_SIZES.heroSubtitle} text-gray-700`}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                >
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 1.0 }}
-                    >
-                        SFU CS Student
-                    </motion.div>
-                    <motion.div
-                        key={currentRole}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.5 }}
-                        className="font-medium"
-                    >
-                        Software Engineer
-                    </motion.div>
-                </motion.div>
-
-                {/* Third flex: Bio | Social Icons */}
-                <motion.div
-                    className="mt-16 flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.2 }}
-                >
-                    <motion.p
-                        className={`${FONT_SIZES.heroBio} text-gray-800 leading-snug lg:max-w-2xl`}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1.0, delay: 1.4 }}
-                    >
-                        Third-year CS student at Simon Fraser University
-                        passionate about building full-stack applications and
-                        automating the boring stuff. Always looking for
-                        opportunities to learn, grow, and write code that works
-                        on the first try (occasionally).
-                    </motion.p>
-                    <motion.div
-                        className="flex gap-4"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 1.6 }}
-                    >
-                        {[
-                            {
-                                href: "https://github.com/Mark-Vu",
-                                label: "GitHub",
-                                icon: Github,
-                            },
-                            {
-                                href: "https://www.linkedin.com/in/markvu03",
-                                label: "LinkedIn",
-                                icon: Linkedin,
-                            },
-                            {
-                                href: "mailto:mdv2@sfu.ca",
-                                label: "Email",
-                                icon: Mail,
-                            },
-                        ].map((social, index) => (
-                            <motion.a
-                                key={social.label}
-                                href={social.href}
-                                target={
-                                    social.label !== "Email"
-                                        ? "_blank"
-                                        : undefined
-                                }
-                                rel={
-                                    social.label !== "Email"
-                                        ? "noopener noreferrer"
-                                        : undefined
-                                }
-                                aria-label={social.label}
-                                className="w-12 h-12 lg:w-14 lg:h-14 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{
-                                    duration: 0.4,
-                                    delay: 1.8 + index * 0.1,
-                                    type: "spring",
-                                    stiffness: 200,
-                                }}
-                                whileHover={{
-                                    scale: 1.1,
-                                    rotate: 5,
-                                    transition: { duration: 0.2 },
-                                }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <social.icon className="w-5 h-5 lg:w-6 lg:h-6" />
-                            </motion.a>
-                        ))}
-                    </motion.div>
-                </motion.div>
+        <section id="top" ref={section} className="personal-hero section-shell">
+            <div data-intro className="hero-kicker">
+                <span>Software engineer & CS student</span>
+                <span>Vancouver, BC</span>
+            </div>
+            <div className="name-composition">
+                <h1 data-intro className="personal-name w-full max-w-6xl">Mark Vu<span className="text-[var(--accent)]">.</span></h1>
+                <div data-portrait className="hero-portrait group">
+                    <div className="portrait-circle" />
+                    <Image src={getAssetPath("/bitmoji-smile-thumbs-up.png")} alt="Mark's illustrated avatar, smiling and giving a thumbs up" width={408} height={612} priority className="relative h-auto w-full transition-transform duration-700 ease-out group-hover:scale-105" />
+                    <span className="portrait-caption">Hey, that’s me.</span>
+                </div>
+            </div>
+            <div data-intro className="hero-bottom">
+                <p className="hero-introduction">Hi, I’m Mark. I study computer science at SFU and build software that makes someone’s day a little easier.</p>
+                <div className="hero-aside">
+                    <p>Recently at <strong>1Password</strong>.<br />Previously at Trulioo & FPT Software.</p>
+                    <div className="flex flex-wrap gap-x-6 gap-y-4">
+                        <a className="text-link" href="#projects">Explore my work <ArrowDownRight size={18} /></a>
+                        <a className="text-link" href="mailto:mdv2@sfu.ca">Say hello <ArrowUpRight size={18} /></a>
+                    </div>
+                    <div className="flex gap-5">
+                        <a href="https://github.com/Mark-Vu" target="_blank" rel="noopener noreferrer" aria-label="Mark on GitHub" className="social-link"><Github size={20} /></a>
+                        <a href="https://www.linkedin.com/in/markvu03" target="_blank" rel="noopener noreferrer" aria-label="Mark on LinkedIn" className="social-link"><Linkedin size={20} /></a>
+                    </div>
+                </div>
             </div>
         </section>
     );

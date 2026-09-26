@@ -1,276 +1,169 @@
 "use client";
 
-import {
-    getSectionClasses,
-    getContainerClasses,
-    LAYOUT_CONFIG,
-    FONT_SIZES,
-} from "../config/layout";
-import { Calendar, ChevronDown, ChevronRight } from "lucide-react";
+import { useRef } from "react";
 import Image from "next/image";
-import Badge from "./Badge";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { getAssetPath } from "../utils/paths";
 
-export default function Work() {
-    const [expandedItems, setExpandedItems] = useState({});
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-    const toggleExpanded = (index) => {
-        setExpandedItems((prev) => ({
-            ...prev,
-            [index]: !prev[index],
-        }));
-    };
+const experience = [
+    {
+        company: "1Password",
+        role: "Software Engineer Intern",
+        period: "Jan 2026 to Apr 2026",
+        logo: "/1password_logo.png",
+        summary:
+            "Built release infrastructure and internal tooling used across browser engineering workflows.",
+        outcomes: [
+            "Engineered a Go release automation service supporting more than 12 releases each month and reduced preparation time by 90%.",
+            "Built a React release dashboard that reduced release-status inquiries by 80%.",
+            "Created a TypeScript GitHub App that reduced manual pull-request handling by 95%.",
+        ],
+        stack: "Go, TypeScript, React, GitHub Actions, Kubernetes, Datadog",
+    },
+    {
+        company: "Trulioo",
+        role: "Software QA Engineer Intern",
+        period: "Jan 2025 to Aug 2025",
+        logo: "/trulioo_logo.jpeg",
+        summary:
+            "Modernized API automation and CI feedback loops across identity verification products.",
+        outcomes: [
+            "Migrated API automation from Postman to Cypress across three core products, saving $6,600 each year.",
+            "Raised automated coverage to 95% across four core features and reduced manual QA by more than 15 hours each week.",
+            "Reduced average daily pipeline failures from seven to two through failure analysis and observability.",
+        ],
+        stack: "TypeScript, Cypress, GitLab CI/CD, Grafana, API testing",
+    },
+    {
+        company: "FPT Software",
+        role: "Full-stack Developer Intern",
+        period: "May 2024 to Sep 2024",
+        logo: "/fpt_logo.png",
+        summary:
+            "Delivered Azure-backed product workflows for an AI presentation platform used by sales teams.",
+        outcomes: [
+            "Enabled more than 150 users to generate sales presentations with an AI-assisted platform.",
+            "Designed an asynchronous Azure workflow that kept long-running AI requests from blocking the client.",
+            "Optimized Spring Boot APIs handling more than 5,000 daily requests and improved response time by 36%.",
+        ],
+        stack: "Java, Spring Boot, React, Azure Functions, Service Bus",
+    },
+    {
+        company: "SFU Blueprint",
+        role: "Software Developer",
+        period: "Nov 2025 to Present",
+        logo: null,
+        summary:
+            "Building pro bono software for a community organization serving more than 50 members.",
+        outcomes: [
+            "Developing a full-stack subscription platform for Poverty Coalition.",
+            "Implementing recurring payments, subscription management, and PostgreSQL-backed member data.",
+        ],
+        stack: "Next.js, Supabase, Stripe, PostgreSQL",
+    },
+];
 
-    const workExperience = [
-        {
-            title: "Developer Intern - DevOps",
-            company: "1Password",
-            period: "Jan 2026 - Apr 2026",
-            description: [
-                "Will be working on improving CI/CD performance, automation reliability, and developer tooling across products",
-                "Remote position based in Toronto - because the best security happens when you're comfortable",
-            ],
-            tags: [
-                "DevOps",
-                "CI/CD",
-                "Automation",
-                "Developer Tooling",
-                "Security",
-                "Remote Work",
-            ],
-            logo: "/1password_logo.png",
-        },
-        {
-            title: "Software QA Engineer Intern",
-            company: "Trulioo",
-            period: "Jan 2025 - Aug 2025",
-            description: [
-                "Engineered and refactored an internal testing npm package and Cypress automation tests, enabling 20+ engineers across 3 QA teams to accelerate automation development",
-                "Built and migrated end-to-end tests from Postman to Cypress across 3 core products, boosting coverage to 95% and saving $6,600 annually in licensing costs",
-                "Developed and maintained GitLab CI/CD pipelines for 2 customer portal features, orchestrating 1,000+ automated jobs weekly",
-                "Resolved critical pipeline bottlenecks by troubleshooting flaky tests, reducing average daily failures from 7 to 2 and improving release velocity",
-                "Mastered the office coffee machine and became a caffeine addict",
-            ],
-            tags: [
-                "JavaScript",
-                "TypeScript",
-                "Cypress",
-                "Postman",
-                "GitLab CI/CD",
-                "npm",
-                "QA Automation",
-                "End-to-End Testing",
-            ],
-            logo: "/trulioo_logo.jpeg",
-        },
-        {
-            title: "Cloud Engineer Intern",
-            company: "FPT Software",
-            period: "May 2024 - Sep 2024",
-            description: [
-                "Designed and developed multiple internal tools, improved efficiency and security for engineering and business teams",
-                "Optimized AI slide generation time by 67% (15→5 min) for business team by migrating monolith architecture to microservices using Azure Functions, Service Bus and Cosmos DB",
-                "Enabled 200+ engineers to work without network dependency by developing offline storage and export features for an internal database diagramming tool using React and IndexedDB",
-                "Remote position, International - because cloud engineering works best when you're actually in the clouds",
-            ],
-            tags: [
-                "Azure Functions",
-                "Service Bus",
-                "Cosmos DB",
-                "React",
-                "IndexedDB",
-                "Microservices",
-                "Cloud Engineering",
-                "Performance Optimization",
-            ],
-            logo: "/fpt_logo.png",
-        },
-        {
-            title: "Mobile App Developer (React Native)",
-            company: "CJSF 90.1 FM",
-            period: "May 2023 - Sep 2023",
-            description: [
-                "Implemented and deployed a fully functional mobile app using React Native to App Store & Play Store",
-                "Added live streaming, on-demand playback, scheduling, and push notification features",
-                "Solved 100% of bug reports using Jest to perform manual and automated tests to ensure new features compatibility",
-                "Implemented new updates, such as database access to archived radio shows, and maintained app stability",
-            ],
-            tags: [
-                "React Native",
-                "JavaScript",
-                "Jest",
-                "Mobile Development",
-                "App Store",
-                "Play Store",
-                "Push Notifications",
-                "Live Streaming",
-            ],
-            logo: "/cjsf_logo.jpg",
-        },
-    ];
+
+function CompanyMark({ item }) {
+    if (!item.logo) {
+        return (
+            <div className="flex size-14 items-center justify-center rounded-full bg-[var(--accent)] text-lg font-black text-white">
+                SB
+            </div>
+        );
+    }
 
     return (
-        <section id="work" className={getSectionClasses("work")}>
-            <div className={getContainerClasses("work")}>
-                <motion.div
-                    className="flex flex-col lg:flex-row gap-16 lg:gap-24"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    {/* Left side - Section title */}
-                    <motion.div
-                        className="lg:w-1/3"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        <h2 className={`${FONT_SIZES.sectionTitle} font-black`}>
-                            Work Experience
-                        </h2>
-                        <motion.div
-                            className="w-32 h-1 bg-gradient-to-r from-black to-gray-400 mt-4"
-                            initial={{ width: 0 }}
-                            whileInView={{ width: 128 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                        />
-                    </motion.div>
+        <div className="relative size-14 overflow-hidden rounded-full border border-black/10 bg-white">
+            <Image
+                src={getAssetPath(item.logo)}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="56px"
+            />
+        </div>
+    );
+}
 
-                    {/* Right side - Timeline */}
-                    <motion.div
-                        className="lg:w-2/3 relative"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        {workExperience.map((item, index) => (
-                            <div
+export default function Work() {
+    const section = useRef(null);
+
+    useGSAP(
+        () => {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                return;
+            }
+
+            const media = gsap.matchMedia();
+            media.add("(min-width: 1024px)", () => {
+                ScrollTrigger.create({
+                    trigger: "[data-work-grid]",
+                    start: "top 112px",
+                    end: "bottom bottom-=120",
+                    pin: "[data-work-heading]",
+                    pinSpacing: false,
+                });
+            });
+
+            return () => media.revert();
+        },
+        { scope: section }
+    );
+
+
+    return (
+        <section id="work" ref={section} className="personal-section section-shell">
+            <div>
+                <div data-work-grid className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+                    <div data-work-heading className="self-start">
+                        <h2 className="section-heading">Where I’ve<br />been building.</h2>
+                        <p className="mt-8 max-w-md text-lg leading-relaxed text-black/60">
+                            A few teams I’ve learned from, and the things I’ve helped them build.
+                        </p>
+                    </div>
+
+                    <div className="border-t border-black/15">
+                        {experience.map((item) => (
+                            <article
                                 key={item.company}
-                                className={`relative pl-8 ${
-                                    index !== workExperience.length - 1
-                                        ? "pb-12"
-                                        : ""
-                                }`}
+                                className="border-b border-black/15 py-12 sm:py-16"
                             >
-                                {/* Timeline line and dot */}
-                                <div className="absolute left-0 top-2.5 h-full w-[2px] bg-gray-300">
-                                    <div className="absolute left-[-5px] top-0 size-3 rounded-full border-2 border-black bg-white" />
-                                </div>
-
-                                <div className="space-y-3">
-                                    {/* Company name with icon */}
-                                    <div className="flex items-center gap-3">
-                                        <div className="flex size-20 shrink-0 items-center justify-center rounded-md border border-gray-300 overflow-hidden">
-                                            <Image
-                                                src={getAssetPath(item.logo)}
-                                                alt={`${item.company} logo`}
-                                                width={100}
-                                                height={100}
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                        <div className="flex items-center gap-2 flex-1">
-                                            <span
-                                                className={`${FONT_SIZES.contentTitle} font-semibold`}
-                                            >
+                                <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+                                    <div className="flex items-center gap-4">
+                                        <CompanyMark item={item} />
+                                        <div>
+                                            <h3 className="text-3xl font-bold tracking-[-0.04em]">
                                                 {item.company}
-                                            </span>
-                                            <button
-                                                onClick={() =>
-                                                    toggleExpanded(index)
-                                                }
-                                                className="text-gray-500 hover:text-gray-700 transition-colors p-1 rounded-md hover:bg-gray-100"
-                                                aria-label={
-                                                    expandedItems[index]
-                                                        ? "Hide details"
-                                                        : "Show details"
-                                                }
-                                            >
-                                                {expandedItems[index] ? (
-                                                    <ChevronDown className="size-8 cursor-pointer" />
-                                                ) : (
-                                                    <ChevronRight className="size-8 cursor-pointer" />
-                                                )}
-                                            </button>
+                                            </h3>
+                                            <p className="text-black/55">{item.role}</p>
                                         </div>
                                     </div>
-
-                                    {/* Job title and period */}
-                                    <div>
-                                        <h3
-                                            className={`${FONT_SIZES.contentSubtitle} font-medium`}
-                                        >
-                                            {item.title}
-                                        </h3>
-                                        <div className="mt-1 flex items-center gap-2 text-md text-gray-600">
-                                            <Calendar className="size-5 text-gray-400" />
-                                            <span>{item.period}</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Description as bullet points */}
-                                    {expandedItems[index] && (
-                                        <motion.div
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{
-                                                opacity: 1,
-                                                height: "auto",
-                                            }}
-                                            exit={{ opacity: 0, height: 0 }}
-                                            transition={{
-                                                duration: 0.3,
-                                                ease: "easeInOut",
-                                            }}
-                                            className="space-y-2 overflow-hidden"
-                                        >
-                                            {item.description.map(
-                                                (point, pointIndex) => (
-                                                    <p
-                                                        key={pointIndex}
-                                                        className={`${FONT_SIZES.bodyMedium} text-gray-600 flex items-start`}
-                                                    >
-                                                        <span className="text-gray-400 mr-2 mt-1 text-sm">
-                                                            •
-                                                        </span>
-                                                        {point}
-                                                    </p>
-                                                )
-                                            )}
-                                        </motion.div>
-                                    )}
-
-                                    {/* Technologies */}
-                                    {expandedItems[index] && (
-                                        <motion.div
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{
-                                                opacity: 1,
-                                                height: "auto",
-                                            }}
-                                            exit={{ opacity: 0, height: 0 }}
-                                            transition={{
-                                                duration: 0.3,
-                                                ease: "easeInOut",
-                                                delay: 0.1,
-                                            }}
-                                            className="flex flex-wrap gap-2 overflow-hidden"
-                                        >
-                                            {item.tags.map((tech) => (
-                                                <Badge key={tech} text={tech} />
-                                            ))}
-                                        </motion.div>
-                                    )}
+                                    <p className="shrink-0 font-medium text-black/50">{item.period}</p>
                                 </div>
-                            </div>
+                                <p className="mt-8 text-xl font-medium leading-relaxed">
+                                    {item.summary}
+                                </p>
+                                <ul className="mt-6 grid gap-3 text-base text-black/65">
+                                    {item.outcomes.map((outcome) => (
+                                        <li key={outcome} className="grid grid-cols-[0.7rem_1fr] gap-4">
+                                            <span className="mt-2.5 size-2 rounded-full bg-[var(--accent)]" />
+                                            <span>{outcome}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <p className="mt-8 border-l-2 border-[var(--accent)] pl-4 text-sm font-medium text-black/60">
+                                    {item.stack}
+                                </p>
+                            </article>
                         ))}
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
+
             </div>
         </section>
     );
