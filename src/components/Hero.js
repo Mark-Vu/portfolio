@@ -19,14 +19,15 @@ export default function Hero() {
     }, { scope: section });
 
     return (
-        <section id="top" ref={section} className="personal-hero section-shell">
+        <section id="top" ref={section} className="personal-hero">
             <div className="hero-atmosphere" aria-hidden="true"><span /><span /></div>
+            <div className="section-shell">
             <div data-intro className="hero-kicker">
                 <span>Software engineer & CS student</span>
                 <span>Vancouver, BC</span>
             </div>
             <div className="name-composition">
-                <h1 data-intro className="personal-name w-full max-w-6xl">Mark Vu<span className="name-period text-[var(--accent)]">.</span></h1>
+                <h1 data-intro className="personal-name w-full">Mark Vu<span className="name-period text-[var(--accent)]">.</span></h1>
                 <svg className="name-underline" viewBox="0 0 600 34" fill="none" aria-hidden="true"><path pathLength="1" d="M5 24C140 3 360 2 592 17" /></svg>
                 <div data-portrait className="hero-portrait group">
                     <div className="portrait-circle" />
@@ -36,18 +37,32 @@ export default function Hero() {
                 </div>
             </div>
             <div data-intro className="hero-bottom">
-                <p className="hero-introduction">Hi, I’m Mark. I study computer science at SFU and build software that makes someone’s day a little easier.</p>
+                <div className="hero-introduction">
+                    <p className="intro-greeting">Hi, I’m Mark!</p>
+                    <p className="intro-role">I build automation tools and cloud infrastructure.</p>
+                    <p className="intro-experience">
+                        Previously at <mark className="company-highlight company-onepassword">1Password</mark>
+                        {" & "}
+                        <mark className="company-highlight company-trulioo">Trulioo</mark>.
+                    </p>
+                </div>
                 <div className="hero-aside">
-                    <p>Recently at <strong>1Password</strong>.<br />Previously at Trulioo & FPT Software.</p>
-                    <div className="flex flex-wrap gap-x-6 gap-y-4">
+                    <div className="hero-actions flex flex-wrap items-center gap-x-6 gap-y-4">
                         <a className="text-link" href="#projects">Explore my work <ArrowDownRight size={18} /></a>
-                        <a className="text-link" href="mailto:mdv2@sfu.ca">Say hello <ArrowUpRight size={18} /></a>
+                        <a className="text-link" href="mailto:mdv2@sfu.ca">
+                            <span className="flex flex-col gap-1">
+                                <span>Say hello</span>
+                                <span className="text-sm font-normal text-[var(--muted)]">mdv2@sfu.ca</span>
+                            </span>
+                            <ArrowUpRight size={18} />
+                        </a>
                     </div>
                     <div className="flex gap-5">
                         <a href="https://github.com/Mark-Vu" target="_blank" rel="noopener noreferrer" aria-label="Mark on GitHub" className="social-link"><Github size={20} /></a>
                         <a href="https://www.linkedin.com/in/markvu03" target="_blank" rel="noopener noreferrer" aria-label="Mark on LinkedIn" className="social-link"><Linkedin size={20} /></a>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
     );
