@@ -6,6 +6,7 @@ import Projects from "../components/Projects";
 import OtherProjects from "../components/OtherProjects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import PortfolioMotion from "../components/PortfolioMotion";
 
 const personSchema = {
     "@context": "https://schema.org",
@@ -46,6 +47,7 @@ export default function Home() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
             />
+            <PortfolioMotion>
             <Navigation />
             <Hero />
             <About />
@@ -54,6 +56,7 @@ export default function Home() {
             <OtherProjects />
             <Contact />
             <Footer />
+            </PortfolioMotion>
         </main>
     );
 }

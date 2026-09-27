@@ -15,18 +15,22 @@ export default function Hero() {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         gsap.from("[data-intro]", { y: 28, opacity: 0, stagger: 0.12, duration: 0.9, ease: "power3.out" });
         gsap.from("[data-portrait]", { rotate: -7, y: 35, duration: 1.2, ease: "power3.out" });
+        gsap.from(".name-underline path", { strokeDashoffset: 1, duration: 1.25, delay: 0.55, ease: "power2.inOut" });
     }, { scope: section });
 
     return (
         <section id="top" ref={section} className="personal-hero section-shell">
+            <div className="hero-atmosphere" aria-hidden="true"><span /><span /></div>
             <div data-intro className="hero-kicker">
                 <span>Software engineer & CS student</span>
                 <span>Vancouver, BC</span>
             </div>
             <div className="name-composition">
-                <h1 data-intro className="personal-name w-full max-w-6xl">Mark Vu<span className="text-[var(--accent)]">.</span></h1>
+                <h1 data-intro className="personal-name w-full max-w-6xl">Mark Vu<span className="name-period text-[var(--accent)]">.</span></h1>
+                <svg className="name-underline" viewBox="0 0 600 34" fill="none" aria-hidden="true"><path pathLength="1" d="M5 24C140 3 360 2 592 17" /></svg>
                 <div data-portrait className="hero-portrait group">
                     <div className="portrait-circle" />
+                    <div className="portrait-orbit" aria-hidden="true" />
                     <Image src={getAssetPath("/bitmoji-smile-thumbs-up.png")} alt="Mark's illustrated avatar, smiling and giving a thumbs up" width={408} height={612} priority className="relative h-auto w-full transition-transform duration-700 ease-out group-hover:scale-105" />
                     <span className="portrait-caption">Hey, that’s me.</span>
                 </div>

@@ -17,11 +17,7 @@ const experience = [
         logo: "/1password_logo.png",
         summary:
             "Built release infrastructure and internal tooling used across browser engineering workflows.",
-        outcomes: [
-            "Engineered a Go release automation service supporting more than 12 releases each month and reduced preparation time by 90%.",
-            "Built a React release dashboard that reduced release-status inquiries by 80%.",
-            "Created a TypeScript GitHub App that reduced manual pull-request handling by 95%.",
-        ],
+        quote: "Loved the tech. Loved the team. Fully remote, though, so the office snack budget was unfortunately just my grocery bill.",
         stack: "Go, TypeScript, React, GitHub Actions, Kubernetes, Datadog",
     },
     {
@@ -31,11 +27,7 @@ const experience = [
         logo: "/trulioo_logo.jpeg",
         summary:
             "Modernized API automation and CI feedback loops across identity verification products.",
-        outcomes: [
-            "Migrated API automation from Postman to Cypress across three core products, saving $6,600 each year.",
-            "Raised automated coverage to 95% across four core features and reduced manual QA by more than 15 hours each week.",
-            "Reduced average daily pipeline failures from seven to two through failure analysis and observability.",
-        ],
+        quote: "Great people, excellent office snacks. I took quality assurance seriously on both fronts.",
         stack: "TypeScript, Cypress, GitLab CI/CD, Grafana, API testing",
     },
     {
@@ -45,24 +37,17 @@ const experience = [
         logo: "/fpt_logo.png",
         summary:
             "Delivered Azure-backed product workflows for an AI presentation platform used by sales teams.",
-        outcomes: [
-            "Enabled more than 150 users to generate sales presentations with an AI-assisted platform.",
-            "Designed an asynchronous Azure workflow that kept long-running AI requests from blocking the client.",
-            "Optimized Spring Boot APIs handling more than 5,000 daily requests and improved response time by 36%.",
-        ],
+        quote: "My manager believed in me when my experience section was mostly whitespace. Still grateful for that first real chance.",
         stack: "Java, Spring Boot, React, Azure Functions, Service Bus",
     },
     {
         company: "SFU Blueprint",
         role: "Software Developer",
         period: "Nov 2025 to Present",
-        logo: null,
+        logo: "/blueprint.png",
         summary:
             "Building pro bono software for a community organization serving more than 50 members.",
-        outcomes: [
-            "Developing a full-stack subscription platform for Poverty Coalition.",
-            "Implementing recurring payments, subscription management, and PostgreSQL-backed member data.",
-        ],
+        quote: "Still building. This quote is also technically a work in progress.",
         stack: "Next.js, Supabase, Stripe, PostgreSQL",
     },
 ];
@@ -148,14 +133,9 @@ export default function Work() {
                                 <p className="mt-8 text-xl font-medium leading-relaxed">
                                     {item.summary}
                                 </p>
-                                <ul className="mt-6 grid gap-3 text-base text-black/65">
-                                    {item.outcomes.map((outcome) => (
-                                        <li key={outcome} className="grid grid-cols-[0.7rem_1fr] gap-4">
-                                            <span className="mt-2.5 size-2 rounded-full bg-[var(--accent)]" />
-                                            <span>{outcome}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <blockquote className="mt-6 text-base italic leading-relaxed text-[var(--muted)]">
+                                    &ldquo;{item.quote}&rdquo;
+                                </blockquote>
                                 <p className="mt-8 border-l-2 border-[var(--accent)] pl-4 text-sm font-medium text-black/60">
                                     {item.stack}
                                 </p>

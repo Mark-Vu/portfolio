@@ -49,6 +49,19 @@ const projects = [
         source: "https://devpost.com/software/handora",
         sourceLabel: "Devpost",
     },
+    {
+        title: "JobHub",
+        category: "Co-op job discovery",
+        outcome: "Less tab-hopping. More applying.",
+        description:
+            "A team project to bring co-op and internship listings from multiple job boards into one place. Built around a familiar student problem: searching the same eight job titles on four different websites, every single day.",
+        technologies: "Planned architecture: Next.js, AWS Lambda, API Gateway, ECS, S3, Glue, PostgreSQL, Docker",
+        image: "/job_hub_architecture.png",
+        imageAlt: "JobHub's proposed AWS architecture connecting job-board scrapers, S3, Glue, PostgreSQL, Lambda, and a Next.js frontend",
+        source: "https://github.com/jobless-devs/Jobhub",
+        sourceLabel: "GitHub",
+        featured: true,
+    },
 ];
 
 export default function Projects() {
@@ -60,11 +73,12 @@ export default function Projects() {
             </div>
             <div className="personal-projects">
                 {projects.map((project) => (
-                    <article key={project.title} className="personal-project group">
+                    <article key={project.title} className={`personal-project group${project.featured ? " project-wide" : ""}`}>
                         <a href={project.website || project.source} target="_blank" rel="noopener noreferrer" className="project-image" aria-label={`Explore ${project.title}`}>
-                            <Image src={getAssetPath(project.image)} alt={`${project.title} project screenshot`} fill className="object-contain p-5 transition-transform duration-700 ease-out group-hover:scale-105 sm:p-8" sizes="(max-width: 767px) 100vw, 50vw" />
+                            <Image src={getAssetPath(project.image)} alt={project.imageAlt || `${project.title} project screenshot`} fill className="object-contain p-5 transition-transform duration-700 ease-out group-hover:scale-105 sm:p-8" sizes="(max-width: 767px) 100vw, 50vw" />
                             <span className="project-image-arrow"><ArrowUpRight size={22} /></span>
                         </a>
+                        <div className="project-details">
                         <div className="project-title-row"><h3>{project.title}</h3><span>{project.category}</span></div>
                         <p className="project-outcome">{project.outcome}</p>
                         <p className="project-description">{project.description}</p>
@@ -72,6 +86,7 @@ export default function Projects() {
                         <div className="mt-5 flex gap-6">
                             <a href={project.source} target="_blank" rel="noopener noreferrer" className="text-link">{project.sourceLabel} {project.sourceLabel === "GitHub" ? <Github size={16} /> : <ArrowUpRight size={16} />}</a>
                             {project.website && <a href={project.website} target="_blank" rel="noopener noreferrer" className="text-link">Visit site <ArrowUpRight size={16} /></a>}
+                        </div>
                         </div>
                     </article>
                 ))}
