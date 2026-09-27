@@ -20,7 +20,7 @@ const projects = [
 
 export default function OtherProjects() {
     return (
-        <section id="other-projects" className="bg-[var(--background)] pb-8 md:pb-12">
+        <section id="other-projects" className="pb-8 md:pb-12">
             <div className="section-shell">
                 <div className="border-t border-black/20 pt-10">
                     <h2 className="text-2xl font-bold tracking-[-0.03em]">Other Projects</h2>

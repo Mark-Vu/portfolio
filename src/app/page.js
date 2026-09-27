@@ -50,12 +50,20 @@ export default function Home() {
             <PortfolioMotion>
             <Navigation />
             <Hero />
-            <About />
-            <Work />
-            <Projects />
-            <OtherProjects />
-            <Contact />
-            <Footer />
+            <div className="chapter-surface chapter-about">
+                <About />
+            </div>
+            <div className="chapter-surface chapter-work">
+                <Work />
+            </div>
+            <div className="chapter-surface chapter-projects">
+                <Projects />
+                <OtherProjects />
+            </div>
+            <div className="chapter-surface chapter-contact">
+                <Contact />
+                <Footer />
+            </div>
             </PortfolioMotion>
         </main>
     );
