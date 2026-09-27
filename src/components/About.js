@@ -9,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 import { getAssetPath } from "../utils/paths";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-const statement = "I build automation tools, cloud infrastructure, and backend systems that make repetitive work the computer’s problem instead of yours.";
+const statement = "I enjoy building automation tools, cloud infrastructure, and backend systems. I’m always learning new technologies and open to whatever opportunity comes next.";
 const certifications = [
     { title: "Kubernetes & Cloud Native Associate", issuer: "The Linux Foundation", image: "/certifications/kcna.png", href: "https://www.credly.com/badges/af6d4507-16e6-4a63-9b40-ce46d9a48e16/public_url" },
     { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", image: "/certifications/aws-cloud-practitioner.png", href: "https://www.credly.com/badges/62a56a80-a4be-4ea3-9fe4-8b104d38e2a6/public_url" },

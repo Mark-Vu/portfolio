@@ -101,7 +101,7 @@ section[id] { scroll-margin-top: 100px; }
     width: 100%;
     padding-top: clamp(3rem, 7vw, 7rem);
     padding-bottom: 3.5rem;
-    background: linear-gradient(180deg, #fbf4dc 0%, #f8f2e2 34%, #eef1ef 68%, #e4ecfa 100%);
+    background: linear-gradient(180deg, #fbf4dc 0%, #faf6eb 34%, #fafaf7 68%, #fcfdff 100%);
 }
 .personal-hero { position: relative; isolation: isolate; }
 .hero-atmosphere { display: none; }
@@ -146,11 +146,11 @@ section[id] { scroll-margin-top: 100px; }
 .intro-surface {
     position: relative;
     isolation: isolate;
-    background: #e4ecfa;
+    background: #fcfdff;
 }
 .chapter-surface { position: relative; isolation: isolate; }
 .chapter-about {
-    background: linear-gradient(180deg, #e4ecfa 0%, #edf1f6 48%, #f4f3f0 100%);
+    background: linear-gradient(180deg, #fcfdff 0%, #fafafa 48%, #f4f3f0 100%);
 }
 .chapter-about::before {
     content: "";
