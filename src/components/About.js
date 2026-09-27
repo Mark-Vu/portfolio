@@ -9,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 import { getAssetPath } from "../utils/paths";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-const statement = "It started with a game of Hangman. Now I build tools, untangle backend problems, and automate the things nobody wants to do twice.";
+const statement = "I build automation tools, cloud infrastructure, and backend systems that make repetitive work the computer’s problem instead of yours.";
 const certifications = [
     { title: "Kubernetes & Cloud Native Associate", issuer: "The Linux Foundation", image: "/certifications/kcna.png", href: "https://www.credly.com/badges/af6d4507-16e6-4a63-9b40-ce46d9a48e16/public_url" },
     { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", image: "/certifications/aws-cloud-practitioner.png", href: "https://www.credly.com/badges/62a56a80-a4be-4ea3-9fe4-8b104d38e2a6/public_url" },
@@ -32,10 +32,6 @@ export default function About() {
                     <p data-story className="personal-story">
                         {statement.split(" ").map((word, index) => <span data-word className="inline-block" key={index}>{word}&nbsp;</span>)}
                     </p>
-                    <div className="about-copy">
-                        <p>I wrote my first game in high school, got way too excited when it worked, and decided to study computer science. That curiosity has taken me from web apps to release tooling, cloud infrastructure, and a Bluetooth rehabilitation glove.</p>
-                        <p>I’m working toward my BSc at Simon Fraser University, graduating in September 2027. Outside internships, I build with SFU Blueprint, helping bring useful software to community organizations.</p>
-                    </div>
                     <div className="toolbox">
                         <h3>Things I work with</h3>
                         <p>Go · TypeScript · Java · C# · Python · React · Next.js · PostgreSQL · AWS · Azure · Kubernetes · Terraform · Docker</p>

@@ -104,10 +104,10 @@ export default function Work() {
     return (
         <section id="work" ref={section} className="personal-section section-shell">
             <div>
-                <div data-work-grid className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+                <div data-work-grid className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
                     <div data-work-heading className="self-start">
                         <h2 className="section-heading">Where I’ve<br />been building.</h2>
-                        <p className="mt-8 max-w-md text-lg leading-relaxed text-black/60">
+                        <p className="mt-5 max-w-md text-lg leading-relaxed text-black/60">
                             A few teams I’ve learned from, and the things I’ve helped them build.
                         </p>
                     </div>
@@ -116,9 +116,9 @@ export default function Work() {
                         {experience.map((item) => (
                             <article
                                 key={item.company}
-                                className="border-b border-black/15 py-12 sm:py-16"
+                                className="border-b border-black/15 py-8 sm:py-10"
                             >
-                                <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+                                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                                     <div className="flex items-center gap-4">
                                         <CompanyMark item={item} />
                                         <div>
@@ -130,13 +130,13 @@ export default function Work() {
                                     </div>
                                     <p className="shrink-0 font-medium text-black/50">{item.period}</p>
                                 </div>
-                                <p className="mt-8 text-xl font-medium leading-relaxed">
+                                <p className="mt-5 text-xl font-medium leading-relaxed">
                                     {item.summary}
                                 </p>
-                                <blockquote className="mt-6 text-base italic leading-relaxed text-[var(--muted)]">
+                                <blockquote className="mt-4 text-base italic leading-relaxed text-[var(--muted)]">
                                     &ldquo;{item.quote}&rdquo;
                                 </blockquote>
-                                <p className="mt-8 border-l-2 border-[var(--accent)] pl-4 text-sm font-medium text-black/60">
+                                <p className="mt-5 border-l-2 border-[var(--accent)] pl-4 text-sm font-medium text-black/60">
                                     {item.stack}
                                 </p>
                             </article>
