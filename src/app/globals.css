@@ -97,9 +97,14 @@ button:focus-visible {
 section[id] { scroll-margin-top: 100px; }
 .personal-navigation { position: sticky; top: 0; z-index: 50; background: #f8f7f4ed; backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
 .reading-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); z-index: 100; transform: scaleX(0); transform-origin: left; pointer-events: none; }
-.personal-hero { width: 100%; padding-top: clamp(3rem, 7vw, 7rem); padding-bottom: 3.5rem; }
+.personal-hero {
+    width: 100%;
+    padding-top: clamp(3rem, 7vw, 7rem);
+    padding-bottom: 3.5rem;
+    background: linear-gradient(180deg, #fbf4dc 0%, #f8f2e2 34%, #eef1ef 68%, #e4ecfa 100%);
+}
 .personal-hero { position: relative; isolation: isolate; }
-.hero-atmosphere { position: absolute; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; }
+.hero-atmosphere { display: none; }
 .hero-atmosphere span { position: absolute; width: 42%; aspect-ratio: 1; border-radius: 50%; filter: blur(75px); opacity: .45; }
 .hero-atmosphere span:first-child { right: 0; top: 8%; background: #d3defb; animation: halo-drift 16s ease-in-out infinite alternate; }
 .hero-atmosphere span:last-child { right: 24%; top: 30%; background: #f3dfcf; opacity: .3; animation: halo-drift 20s ease-in-out infinite alternate-reverse; }
@@ -138,11 +143,14 @@ section[id] { scroll-margin-top: 100px; }
 .social-link { transition: color .2s, transform .2s; }
 .social-link:hover { color: var(--accent); transform: translateY(-3px); }
 .personal-section { padding-block: 4rem; }
+.intro-surface {
+    position: relative;
+    isolation: isolate;
+    background: #e4ecfa;
+}
 .chapter-surface { position: relative; isolation: isolate; }
 .chapter-about {
-    background:
-        radial-gradient(ellipse at 4% 35%, #dce6fa95, transparent 52%),
-        linear-gradient(180deg, var(--background), #f0f3f8 55%, #f4f3f0);
+    background: linear-gradient(180deg, #e4ecfa 0%, #edf1f6 48%, #f4f3f0 100%);
 }
 .chapter-about::before {
     content: "";
@@ -152,7 +160,7 @@ section[id] { scroll-margin-top: 100px; }
     pointer-events: none;
     background-image: radial-gradient(#5873a833 .75px, transparent .75px);
     background-size: 22px 22px;
-    mask-image: radial-gradient(ellipse at 10% 50%, black, transparent 55%);
+    mask-image: radial-gradient(ellipse at 10% 58%, black, transparent 55%);
 }
 .chapter-work {
     background:

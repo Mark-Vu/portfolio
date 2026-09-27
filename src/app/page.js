@@ -49,9 +49,11 @@ export default function Home() {
             />
             <PortfolioMotion>
             <Navigation />
-            <Hero />
-            <div className="chapter-surface chapter-about">
-                <About />
+            <div className="intro-surface">
+                <Hero />
+                <div className="chapter-surface chapter-about">
+                    <About />
+                </div>
             </div>
             <div className="chapter-surface chapter-work">
                 <Work />
