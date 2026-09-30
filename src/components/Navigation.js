@@ -15,7 +15,7 @@ export default function Navigation() {
 
     return (
         <header className="personal-navigation">
-            <div className="section-shell flex items-center justify-between py-5">
+            <div className="section-shell flex items-center justify-between py-3.5">
                 <a
                     href="#top"
                     className="text-lg font-black tracking-[-0.04em]"

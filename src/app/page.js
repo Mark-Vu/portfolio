@@ -1,7 +1,6 @@
 import Navigation from "../components/Navigation";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Work from "../components/Work";
 import Projects from "../components/Projects";
 import OtherProjects from "../components/OtherProjects";
 import Contact from "../components/Contact";
@@ -51,12 +50,9 @@ export default function Home() {
             <Navigation />
             <div className="intro-surface">
                 <Hero />
-                <div className="chapter-surface chapter-about">
+                <div className="chapter-surface chapter-overview">
                     <About />
                 </div>
-            </div>
-            <div className="chapter-surface chapter-work">
-                <Work />
             </div>
             <div className="chapter-surface chapter-projects">
                 <Projects />

@@ -10,7 +10,7 @@ export default function Contact() {
                     <h2 className="section-heading">Have something<br />in mind?</h2>
                     <p className="contact-copy">A role, a project, or just a good conversation.<br />I’d love to hear from you.</p>
                     <a className="email-link" href="mailto:mdv2@sfu.ca">mdv2@sfu.ca <ArrowUpRight /></a>
-                    <div className="mt-8 flex gap-7">
+                    <div className="mt-5 flex gap-7">
                         <a className="text-link" href="https://github.com/Mark-Vu" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight size={16} /></a>
                         <a className="text-link" href="https://www.linkedin.com/in/markvu03" target="_blank" rel="noopener noreferrer">LinkedIn <ArrowUpRight size={16} /></a>
                     </div>

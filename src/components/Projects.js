@@ -98,7 +98,6 @@ const projects = [
         image: "/projects/fic-check.png",
         source: "https://github.com/PaulCompSci/FIC-Check",
         sourceLabel: "GitHub",
-        featured: true,
     },
 ];
 
@@ -113,8 +112,8 @@ export default function Projects() {
                 {projects.map((project) => (
                     <article key={project.title} className={`personal-project group${project.featured ? " project-wide" : ""}`}>
                         <a href={project.website || project.source} target="_blank" rel="noopener noreferrer" className="project-image" aria-label={`Explore ${project.title}`}>
-                            <Image src={getAssetPath(project.image)} alt={project.imageAlt || `${project.title} project screenshot`} fill className="object-contain p-5 transition-transform duration-700 ease-out group-hover:scale-105 sm:p-8" sizes="(max-width: 767px) 100vw, 50vw" />
-                            <span className="project-image-arrow"><ArrowUpRight size={22} /></span>
+                            <Image src={getAssetPath(project.image)} alt={project.imageAlt || `${project.title} project screenshot`} fill className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105 sm:p-5" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" />
+                            <span className="project-image-arrow"><ArrowUpRight size={18} /></span>
                         </a>
                         <div className="project-details">
                         <div className="project-title-row"><h3>{project.title}</h3><span>{project.category}</span></div>
@@ -134,7 +133,7 @@ export default function Projects() {
                                 ))}
                             </ul>
                         </div>
-                        <div className="mt-5 flex gap-6">
+                        <div className="mt-3 flex gap-5 text-sm">
                             <a href={project.source} target="_blank" rel="noopener noreferrer" className="text-link">{project.sourceLabel} {project.sourceLabel === "GitHub" ? <Github size={16} /> : <ArrowUpRight size={16} />}</a>
                             {project.website && <a href={project.website} target="_blank" rel="noopener noreferrer" className="text-link">Visit site <ArrowUpRight size={16} /></a>}
                         </div>

@@ -20,21 +20,21 @@ const projects = [
 
 export default function OtherProjects() {
     return (
-        <section id="other-projects" className="pb-8 md:pb-12">
+        <section id="other-projects" className="pb-7 md:pb-9">
             <div className="section-shell">
-                <div className="border-t border-black/20 pt-10">
+                <div className="border-t border-black/20 pt-7">
                     <h2 className="text-2xl font-bold tracking-[-0.03em]">Other Projects</h2>
-                    <div className="mt-8 border-t border-black/15">
+                    <div className="mt-5 border-t border-black/15">
                         {projects.map((project) => (
                             <a
                                 key={project.name}
                                 href={project.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-center justify-between gap-8 border-b border-black/15 py-7"
+                                className="group flex items-center justify-between gap-8 border-b border-black/15 py-4"
                             >
                                 <div>
-                                    <h3 className="text-2xl font-bold tracking-[-0.03em] transition-transform duration-300 group-hover:translate-x-2 sm:text-3xl">
+                                    <h3 className="text-xl font-bold tracking-[-0.03em] transition-transform duration-300 group-hover:translate-x-2 sm:text-2xl">
                                         {project.name}
                                     </h3>
                                     <p className="mt-1 text-black/55">{project.detail}</p>
