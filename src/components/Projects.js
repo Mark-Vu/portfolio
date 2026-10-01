@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Sun } from "lucide-react";
 import { getAssetPath } from "../utils/paths";
 
 const technologyColors = {
@@ -105,7 +105,11 @@ export default function Projects() {
     return (
         <section id="projects" className="personal-section section-shell">
             <div className="project-heading">
-                <h2 className="section-heading">Some things<br />I’ve made.</h2>
+                <h2 className="section-heading project-heading-title">
+                    Some things<br />
+                    <span className="marker-highlight">I’ve made.</span>
+                    <Sun className="project-sun" aria-hidden="true" />
+                </h2>
                 <p>Weekend ideas, hackathon experiments, and projects that found their way into someone’s workflow.</p>
             </div>
             <div className="personal-projects">

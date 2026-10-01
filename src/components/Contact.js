@@ -7,7 +7,7 @@ export default function Contact() {
         <section id="contact" className="personal-section section-shell">
             <div className="contact-layout">
                 <div>
-                    <h2 className="section-heading">Have something<br />in mind?</h2>
+                    <h2 className="section-heading">Have something<br /><span className="marker-highlight">in mind?</span></h2>
                     <p className="contact-copy">A role, a project, or just a good conversation.<br />I’d love to hear from you.</p>
                     <a className="email-link" href="mailto:mdv2@sfu.ca">mdv2@sfu.ca <ArrowUpRight /></a>
                     <div className="mt-5 flex gap-7">

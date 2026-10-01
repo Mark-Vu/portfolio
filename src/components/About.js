@@ -58,7 +58,7 @@ export default function About() {
             <div className="career-overview">
                 <aside className="profile-summary">
                     <p className="section-eyebrow">About</p>
-                    <h2 className="overview-heading">A builder who likes useful systems.</h2>
+                    <h2 className="overview-heading">A builder who likes <span className="marker-highlight">useful systems.</span></h2>
                     <p className="overview-copy">
                         I enjoy building automation tools, cloud infrastructure, and backend systems. I’m always learning and open to the next challenge.
                     </p>
