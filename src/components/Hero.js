@@ -14,7 +14,11 @@ export default function Hero() {
     useGSAP(() => {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         gsap.from("[data-intro]", { y: 28, opacity: 0, stagger: 0.12, duration: 0.9, ease: "power3.out" });
-        gsap.from("[data-portrait]", { rotate: -7, y: 35, duration: 1.2, ease: "power3.out" });
+        gsap.fromTo(
+            "[data-portrait]",
+            { rotate: -45, y: 18 },
+            { rotate: 5, y: 0, duration: 0.7, ease: "back.out(1.45)", delay: 0.08 }
+        );
         gsap.from(".name-underline path", { strokeDashoffset: 1, duration: 1.25, delay: 0.55, ease: "power2.inOut" });
     }, { scope: section });
 

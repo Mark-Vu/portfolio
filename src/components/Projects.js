@@ -1,31 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight, Github, Sun } from "lucide-react";
 import { getAssetPath } from "../utils/paths";
-
-const technologyColors = {
-    "API Gateway": { color: "#b45309", background: "#fff7ed", border: "#fdba74" },
-    "ASP.NET": { color: "#512bd4", background: "#f3efff", border: "#c4b5fd" },
-    "AWS Lambda": { color: "#b45309", background: "#fff7ed", border: "#fdba74" },
-    Docker: { color: "#086dd7", background: "#eef7ff", border: "#93c5fd" },
-    ElevenLabs: { color: "#111111", background: "#ffffff", border: "#9ca3af" },
-    ECS: { color: "#b45309", background: "#fff7ed", border: "#fdba74" },
-    Gemini: { color: "#2563eb", background: "#eff6ff", border: "#93c5fd" },
-    GKE: { color: "#326ce5", background: "#eff6ff", border: "#93c5fd" },
-    Glue: { color: "#c2410c", background: "#fff7ed", border: "#fdba74" },
-    Go: { color: "#007d9c", background: "#ecfeff", border: "#67e8f9" },
-    Java: { color: "#217346", background: "#ecfdf5", border: "#86efac" },
-    Jaeger: { color: "#b4237a", background: "#fdf2f8", border: "#f9a8d4" },
-    Kubernetes: { color: "#2852a5", background: "#eff6ff", border: "#93c5fd" },
-    "Next.js": { color: "#111111", background: "#ffffff", border: "#9ca3af" },
-    "Pixi.js": { color: "#c026d3", background: "#fdf4ff", border: "#f0abfc" },
-    PostgreSQL: { color: "#336791", background: "#eff6ff", border: "#93c5fd" },
-    React: { color: "#087ea4", background: "#ecfeff", border: "#67e8f9" },
-    S3: { color: "#15803d", background: "#f0fdf4", border: "#86efac" },
-    "Spring Boot": { color: "#2f855a", background: "#f0fdf4", border: "#86efac" },
-    Terraform: { color: "#654ff0", background: "#f5f3ff", border: "#c4b5fd" },
-    Tilt: { color: "#c02648", background: "#fff1f2", border: "#fda4af" },
-    "Web Bluetooth": { color: "#155eae", background: "#eff6ff", border: "#93c5fd" },
-};
+import TechnologyList from "./TechnologyList";
 
 const projects = [
     {
@@ -123,20 +99,7 @@ export default function Projects() {
                         <div className="project-title-row"><h3>{project.title}</h3><span>{project.category}</span></div>
                         <p className="project-outcome">{project.outcome}</p>
                         <p className="project-description">{project.description}</p>
-                        <div className="project-stack" aria-label={`Technologies used for ${project.title}`}>
-                            <span className="project-stack-label">Tech</span>
-                            <ul className="project-tech-list">
-                                {project.technologies.map((technology) => (
-                                    <li
-                                        key={technology}
-                                        className="project-tech"
-                                        style={technologyColors[technology]}
-                                    >
-                                        {technology}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        <TechnologyList technologies={project.technologies} context={project.title} />
                         <div className="mt-3 flex gap-5 text-sm">
                             <a href={project.source} target="_blank" rel="noopener noreferrer" className="text-link">{project.sourceLabel} {project.sourceLabel === "GitHub" ? <Github size={16} /> : <ArrowUpRight size={16} />}</a>
                             {project.website && <a href={project.website} target="_blank" rel="noopener noreferrer" className="text-link">Visit site <ArrowUpRight size={16} /></a>}

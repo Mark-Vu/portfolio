@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { getAssetPath } from "../utils/paths";
+import TechnologyList from "./TechnologyList";
 
 const certifications = [
     { title: "Kubernetes & Cloud Native Associate", issuer: "The Linux Foundation", image: "/certifications/kcna.png", href: "https://www.credly.com/badges/af6d4507-16e6-4a63-9b40-ce46d9a48e16/public_url" },
@@ -16,7 +17,7 @@ const experience = [
         period: "Jan–Apr 2026",
         logo: "/1password_logo.png",
         summary: "Built release infrastructure and internal tooling used across browser engineering workflows.",
-        stack: "Go · TypeScript · React · GitHub Actions · Kubernetes · Datadog",
+        technologies: ["Go", "TypeScript", "React", "GitHub Actions", "Kubernetes", "Datadog"],
     },
     {
         company: "SFU Blueprint",
@@ -24,7 +25,7 @@ const experience = [
         period: "Nov 2025–Present",
         logo: "/blueprint.png",
         summary: "Building pro bono software for a community organization serving more than 50 members.",
-        stack: "Next.js · Supabase · Stripe · PostgreSQL",
+        technologies: ["Next.js", "Supabase", "Stripe", "PostgreSQL"],
     },
     {
         company: "Trulioo",
@@ -32,7 +33,7 @@ const experience = [
         period: "Jan–Aug 2025",
         logo: "/trulioo_logo.jpeg",
         summary: "Modernized API automation and CI feedback loops across identity verification products.",
-        stack: "TypeScript · Cypress · GitLab CI/CD · Grafana · API testing",
+        technologies: ["TypeScript", "Cypress", "GitLab CI/CD", "Grafana", "API testing"],
     },
     {
         company: "FPT Software",
@@ -40,7 +41,7 @@ const experience = [
         period: "May–Sep 2024",
         logo: "/fpt_logo.png",
         summary: "Delivered Azure-backed product workflows for an AI presentation platform used by sales teams.",
-        stack: "Java · Spring Boot · React · Azure Functions · Service Bus",
+        technologies: ["Java", "Spring Boot", "React", "Azure Functions", "Service Bus"],
     },
 ];
 
@@ -101,7 +102,7 @@ export default function About() {
                                         <time>{item.period}</time>
                                     </div>
                                     <p className="experience-summary">{item.summary}</p>
-                                    <p className="experience-stack">{item.stack}</p>
+                                    <TechnologyList technologies={item.technologies} context={`${item.company} experience`} />
                                 </div>
                             </article>
                         ))}
